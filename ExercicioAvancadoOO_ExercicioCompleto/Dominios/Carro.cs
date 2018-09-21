@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using ExercicioAvancadoOO_ExercicioCompleto.MetodosAbstratos;
 
 namespace ExercicioAvancadoOO_ExercicioCompleto.Dominios {
     class Carro {

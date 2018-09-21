@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dominios\Acessorio.cs" />
+    <Compile Include="MetodosAbstratos\Acessorio.cs" />
     <Compile Include="Dominios\Carro.cs" />
     <Compile Include="Dominios\Marca.cs" />
     <Compile Include="Dominios\ModelException.cs" />
+    <Compile Include="Dominios\Motor.cs" />
+    <Compile Include="Dominios\Pneu.cs" />
     <Compile Include="Enumerados\ItensdeMenu.cs" />
     <Compile Include="Tela.cs" />
     <Compile Include="Program.cs" />

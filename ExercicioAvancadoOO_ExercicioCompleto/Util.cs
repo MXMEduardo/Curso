@@ -14,8 +14,9 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
             marca.Add(new Marca(1002, "General Motors", "EUA"));
                 marca[1].AddCarro(new Carro(104, "Cruze", 2016, 30000.00, marca[0]));
                 marca[1].AddCarro(new Carro(105, "Cobalt", 2015, 25000.00, marca[0]));
-                    marca[1].carros[0].acessorios.Add(new Acessorio("Engate", 200.00, marca[1].carros[0]));
-                    marca[1].carros[0].acessorios.Add(new Acessorio("Antena", 100.00, marca[1].carros[0]));
+                    marca[1].carros[0].acessorios.Add(new Pneu("Godyear", 200.00, 40, marca[1].carros[0]));
+                    marca[1].carros[0].acessorios.Add(new Motor("Antena", 100.00, marca[1].carros[0]));
+                    marca[1].carros[0].acessorios.Add(new Motor("Vidro", 300.00, marca[1].carros[0]));
 
             marca[1].AddCarro(new Carro(106, "Cobalt", 2017, 35000.00, marca[0]));
         }

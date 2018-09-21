@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ExercicioAvancadoOO_ExercicioCompleto.Dominios;
+using ExercicioAvancadoOO_ExercicioCompleto.MetodosAbstratos;
 
 namespace ExercicioAvancadoOO_ExercicioCompleto {
     class Tela {
@@ -102,7 +103,7 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
                 throw new ModelException("Marca não encontrada: " + CodigoMarca);
             }
 
-            Console.Write("Digite o nome do carro:");
+            Console.Write("Digite o código do carro:");
             int codigoCarro = int.Parse(Console.ReadLine());
 
             Console.Write("Digite o modelo do carro:");
@@ -119,7 +120,7 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
             Console.WriteLine();
             Console.WriteLine("Carro cadastrado.");
             for (int x = 0; x < marca[posMarca].carros.Count; x++) {
-                Console.WriteLine(marca[posMarca].carros);
+                Console.WriteLine(marca[posMarca].carros[x]);
             }
         }
 
@@ -142,13 +143,29 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
                 throw new ModelException("Carro não encontrad0: " + codigoCarro);
             }
 
-            Console.Write("Digite a descrição do acessório:");
-            string descricaoAcessorio = Console.ReadLine();
+            Console.Write("Que tipo de acessório ? (P)nel ou (M)otor :");
+            char TipodeAcessorio = char.Parse(Console.ReadLine());
+            if (TipodeAcessorio == 'P') {
+                Console.Write("Digite a descrição do Pneu:");
+                string descricaoAcessorio = Console.ReadLine();
 
-            Console.Write("Digite o valor do acessório:");
-            double valorAcessorio = double.Parse(Console.ReadLine());
+                Console.Write("Digite o aro do Pneu:");
+                int aroAcessorio = int.Parse(Console.ReadLine());
 
-            marca[posMarca].carros[posCarro].AddAcessorio(new Acessorio(descricaoAcessorio, valorAcessorio, marca[posMarca].carros[posCarro]));
+                Console.Write("Digite o valor do Pneu:");
+                double valorAcessorio = double.Parse(Console.ReadLine());
+
+                marca[posMarca].carros[posCarro].AddAcessorio(new Pneu(descricaoAcessorio, valorAcessorio, aroAcessorio, marca[posMarca].carros[posCarro]));
+            }
+            else if (TipodeAcessorio == 'M') {
+                Console.Write("Digite a descrição do acessório de Motor:");
+                string descricaoAcessorio = Console.ReadLine();
+
+                Console.Write("Digite o valor do acessório de Motor:");
+                double valorAcessorio = double.Parse(Console.ReadLine());
+
+                marca[posMarca].carros[posCarro].AddAcessorio(new Motor(descricaoAcessorio, valorAcessorio, marca[posMarca].carros[posCarro]));
+            }
 
             Console.WriteLine();
             Console.WriteLine("Acessório cadastrado.");
