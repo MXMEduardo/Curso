@@ -20,10 +20,30 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
                     int caseSwitch = tela.Opcao;
                     switch (caseSwitch) {
                         case 1:
-                            tela.ListasMarcas(marcas, false);
+                            Console.WriteLine();
+                            Console.Write("Deseja uma listagem detalhada ? (S/N) :");
+                            char det = char.Parse(Console.ReadLine());
+                            if (det == 'N') {
+                                tela.ListasMarcas(marcas);
+                            }
+                            else {
+                                tela.ListasMarcasDetail(marcas);
+                            }
                             break;
                         case 2:
                             tela.ListaCarrosOrdenadamente(marcas);
+                            break;
+                        case 3:
+                            tela.CadastrarMarca(marcas);
+                            break;
+                        case 4:
+                            tela.CadastrarCarro(marcas);
+                            break;
+                        case 5:
+                            tela.CadastrarAcessorio(marcas);
+                            break;
+                        case 6:
+                            tela.ListaAcessorios(marcas);
                             break;
                         default:
                             Console.WriteLine();
