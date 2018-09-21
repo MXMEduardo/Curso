@@ -25,19 +25,19 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
         public void ListasMarcas(List<Marca> marca) {
             Console.WriteLine();
             Console.WriteLine("Marcas:");
-            Console.WriteLine();
             for (int x = 0; x < marca.Count; x++) {
                 Console.WriteLine(marca[x]);
             }
+            Console.WriteLine();
         }
 
         public void ListasMarcasDetail(List<Marca> marca) {
             Console.WriteLine();
             Console.WriteLine("Marcas:");
-            Console.WriteLine();
             for (int x = 0; x < marca.Count; x++) {
                 Console.WriteLine(marca[x]);
 
+                Console.WriteLine();
                 Console.WriteLine("   Carros:");
                 for (int y = 0; y < marca[x].carros.Count; y++) {
                     Console.WriteLine("      " + marca[x].carros[y]);
@@ -46,22 +46,26 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
                         foreach (Acessorio z in marca[x].carros[y].acessorios) {
                             Console.WriteLine("         " + z);
                         }
+                        Console.WriteLine();
                     }
                 }
+                Console.WriteLine();
             }
+            Console.WriteLine();
         }
 
         public void ListaCarrosOrdenadamente(List<Marca> marca) {
             Console.WriteLine();
             Console.Write("Identifique uma Marca:");
 
-            int CodMarca = int.Parse(Console.ReadLine());
-            int pos = marca.FindIndex(x => x.codigo == CodMarca);
+            int CodigoMarca = int.Parse(Console.ReadLine());
+            int pos = marca.FindIndex(x => x.codigo == CodigoMarca);
 
             if (pos == -1) {
-                throw new ModelException("Marca não encontrada: " + CodMarca);
+                throw new ModelException("Marca não encontrada: " + CodigoMarca);
             }
 
+            Console.WriteLine();
             Console.WriteLine("Carros da Marca:" + marca[pos].nome);
             for (int x = 0; x < marca[pos].carros.Count; x++) {
                 Console.WriteLine("   " + marca[pos].carros[x]);
@@ -94,6 +98,9 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
 
             // Achando a Marca
             int posMarca = marca.FindIndex(x => x.codigo == CodigoMarca);
+            if (posMarca == -1) {
+                throw new ModelException("Marca não encontrada: " + CodigoMarca);
+            }
 
             Console.Write("Digite o nome do carro:");
             int codigoCarro = int.Parse(Console.ReadLine());
@@ -111,7 +118,7 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
 
             Console.WriteLine();
             Console.WriteLine("Carro cadastrado.");
-            for (int x=0; x < marca[posMarca].carros.Count; x++) {
+            for (int x = 0; x < marca[posMarca].carros.Count; x++) {
                 Console.WriteLine(marca[posMarca].carros);
             }
         }
@@ -123,11 +130,17 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
             Console.Write("Digite o código da Marca:");
             int CodigoMarca = int.Parse(Console.ReadLine());
             int posMarca = marca.FindIndex(x => x.codigo == CodigoMarca);
+            if (posMarca == -1) {
+                throw new ModelException("Marca não encontrada: " + CodigoMarca);
+            }
 
             // Achando o Carro
             Console.Write("Digite o código do carro:");
             int codigoCarro = int.Parse(Console.ReadLine());
             int posCarro = marca[posMarca].carros.FindIndex(x => x.codigo == codigoCarro);
+            if (posCarro == -1) {
+                throw new ModelException("Carro não encontrad0: " + codigoCarro);
+            }
 
             Console.Write("Digite a descrição do acessório:");
             string descricaoAcessorio = Console.ReadLine();
@@ -147,7 +160,22 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
         }
 
         public void ListaAcessorios(List<Marca> marca) {
+            // Achando o Carro
+            Console.Write("Digite o código do carro:");
+            int codigoCarro = int.Parse(Console.ReadLine());
 
+            for (int posMarca = 0; posMarca < marca.Count; posMarca++) {
+                int posCarro = marca[posMarca].carros.FindIndex(x => x.codigo == codigoCarro);
+                if (posCarro > -1) {
+                    Console.WriteLine();
+                    Console.WriteLine("   Carro:");
+                    Console.WriteLine("   " + marca[posMarca].carros[posCarro]);
+                    Console.WriteLine("      Acessórios:");
+                    foreach (Acessorio x in marca[posMarca].carros[posCarro].acessorios) {
+                        Console.WriteLine("      " + x);
+                    }
+                }
+            }
         }
     }
 }

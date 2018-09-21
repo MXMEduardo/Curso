@@ -56,6 +56,7 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
             }
             catch (Exception e) {
                 Console.WriteLine("Erro inesperado: " + e.Message);
+                Console.ReadLine();
             }
         }
     }
