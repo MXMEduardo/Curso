@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ExercicioAvancadoOO_ExercicioCompleto.Dominios;
+using ExercicioAvancadoOO_ExercicioCompleto.Enumerados;
 
 namespace ExercicioAvancadoOO_ExercicioCompleto {
     class Program {
@@ -44,6 +45,9 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
                             break;
                         case 6:
                             tela.ListaAcessorios(marcas);
+                            break;
+                        case 7:
+                            tela.EstudodeArquivos(FileTests.Teste_de_File);
                             break;
                         default:
                             Console.WriteLine();

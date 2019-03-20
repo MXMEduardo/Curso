@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using ExercicioAvancadoOO_ExercicioCompleto.Dominios;
+using ExercicioAvancadoOO_ExercicioCompleto.Enumerados;
 using ExercicioAvancadoOO_ExercicioCompleto.MetodosAbstratos;
+using System.IO;
 
 namespace ExercicioAvancadoOO_ExercicioCompleto {
     class Tela {
@@ -17,6 +19,8 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
             Console.WriteLine("4 – Cadastrar carro");
             Console.WriteLine("5 – Cadastrar acessório");
             Console.WriteLine("6 – Mostrar detalhes de um carro");
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine("7 – Estudo de manipulação de arquivos");
             Console.WriteLine();
             Console.Write("Digite o código da sua opção: ");
 
@@ -193,6 +197,29 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
                     }
                 }
             }
+        }
+
+        public void EstudodeArquivos(FileTests teste) {
+
+            try {
+                switch ((int)teste) {
+                    case 1:
+                        // Exercicio de Arquivos usando File
+                        string arq1 = "c:\temp\teste.txt";
+                        string arq2 = "c:\temp\teste2.txt";
+                        File.Copy(arq1, arq2);
+                        string[] lines = File.ReadAllLines(arq1);
+                        foreach (string x in lines) {
+                            Console.WriteLine(x);
+                        }
+                        break;
+                }
+
+            }
+            catch (IOException e) {
+                Console.WriteLine("deu erro na bagaça " + e.Message);
+            }
+
         }
     }
 }

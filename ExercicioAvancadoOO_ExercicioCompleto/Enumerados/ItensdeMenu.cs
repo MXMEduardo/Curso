@@ -6,6 +6,7 @@
         Cadastrar_carro,        
         Cadastrar_acessórios,
         Mostrar_detalhes_de_um_carro,
+        Estudo_de_Arquivos,
         Sair
    };
 }
