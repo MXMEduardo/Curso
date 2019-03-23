@@ -15,8 +15,11 @@ namespace ExercicioAvancadoOO_ExercicioCompleto.Dominios {
 
         public void TrabalhandoComArquivos(int teste) {
 
+            Console.Clear();
+
             string arq1 = @"c:\Temp\teste.txt";
             string arq2 = @"c:\Temp\teste2.txt";
+            string path = @"c:\Temp\";
 
             switch (teste) {
                 case 0:
@@ -87,6 +90,31 @@ namespace ExercicioAvancadoOO_ExercicioCompleto.Dominios {
                             swFile.WriteLine(s.ToUpper());
                         }
                     }
+                    break;
+                case 6:
+                    var folder = Directory.EnumerateDirectories(path, "*.*", SearchOption.AllDirectories);
+                    Console.WriteLine("Diretórios");
+                    foreach (string dir in folder) {
+                        Console.WriteLine(dir);
+                    }
+
+                    var arquivos = Directory.EnumerateFiles(path, "*.*", SearchOption.AllDirectories);
+                    Console.WriteLine("Arquivos");
+                    foreach (string arq in arquivos) {
+                        Console.WriteLine(arq);
+                    }
+
+                    Directory.CreateDirectory(path + "Estudando_Directory");
+                    break;
+                case 7:
+                    Console.WriteLine("DirectorySeparatorChar: " + Path.DirectorySeparatorChar);
+                    Console.WriteLine("PathSeparator: " + Path.PathSeparator);
+                    Console.WriteLine("GetDirectoryName: " + Path.GetDirectoryName(path));
+                    Console.WriteLine("GetFileName: " + Path.GetFileName(path));
+                    Console.WriteLine("GetExtension: " + Path.GetExtension(path));
+                    Console.WriteLine("GetFileNameWithoutExtension: " + Path.GetFileNameWithoutExtension(path));
+                    Console.WriteLine("GetFullPath: " + Path.GetFullPath(path));
+                    Console.WriteLine("GetTempPath: " + Path.GetTempPath());
                     break;
             }
 

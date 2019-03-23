@@ -22,6 +22,8 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
             Console.WriteLine("---------------------------------------------");
             Console.WriteLine("7 – Estudo de manipulação de arquivos (File, FileInfo, FileStream e StreamReader ");
             Console.WriteLine("8 – Estudo de StreamWriter");
+            Console.WriteLine("9 – Estudo de Directoryr");
+            Console.WriteLine("10 – Estudo de Path");
             Console.WriteLine();
             Console.Write("Digite o código da sua opção: ");
 
