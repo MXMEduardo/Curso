@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ExercicioAvancadoOO_ExercicioCompleto.Dominios;
 using ExercicioAvancadoOO_ExercicioCompleto.Enumerados;
+using System.IO;
 
 namespace ExercicioAvancadoOO_ExercicioCompleto {
     class Program {
@@ -47,7 +48,10 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
                             tela.ListaAcessorios(marcas);
                             break;
                         case 7:
-                            tela.EstudodeArquivos(FileTests.Teste_de_File);
+                            tela.EstudodeArquivos(FileTests.Teste_de_FileStream_Ex3);
+                            break;
+                        case 8:
+                            tela.EstudodeArquivos(FileTests.Teste_de_StreanWriter);
                             break;
                         default:
                             Console.WriteLine();
@@ -58,10 +62,13 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
                 }
 
             }
+            catch (IOException e) {
+                Console.WriteLine("deu erro na bagaça " + e.Message);
+            }
             catch (Exception e) {
                 Console.WriteLine("Erro inesperado: " + e.Message);
-                Console.ReadLine();
             }
+            Console.ReadLine();
         }
     }
 }
