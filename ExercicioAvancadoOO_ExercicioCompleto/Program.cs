@@ -47,18 +47,6 @@ namespace ExercicioAvancadoOO_ExercicioCompleto {
                         case 6:
                             tela.ListaAcessorios(marcas);
                             break;
-                        case 7:
-                            tela.EstudodeArquivos(FileTests.Teste_de_FileStream_Ex3);
-                            break;
-                        case 8:
-                            tela.EstudodeArquivos(FileTests.Teste_de_StreanWriter);
-                            break;
-                        case 9:
-                            tela.EstudodeArquivos(FileTests.Teste_de_Directory);
-                            break;
-                        case 10:
-                            tela.EstudodeArquivos(FileTests.Teste_de_Path);
-                            break;
                         default:
                             Console.WriteLine();
                             Console.WriteLine("Não existe essa opção de menu.");

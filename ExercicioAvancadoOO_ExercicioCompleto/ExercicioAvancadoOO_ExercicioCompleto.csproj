@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dominios\ExerciciosComArquivos.cs" />
-    <Compile Include="Enumerados\FileTests.cs" />
     <Compile Include="MetodosAbstratos\Acessorio.cs" />
     <Compile Include="Dominios\Carro.cs" />
     <Compile Include="Dominios\Marca.cs" />
